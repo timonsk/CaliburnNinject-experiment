@@ -16,5 +16,11 @@ namespace CaliburnNinjectExperiment.View
 
         [Inject]
         public ShellViewModel ViewModel { get; set; }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var album = ViewModel.User.GetDefaultAlbum();
+            ViewModel.User.Albums.Add(album);
+        }
     }
 }

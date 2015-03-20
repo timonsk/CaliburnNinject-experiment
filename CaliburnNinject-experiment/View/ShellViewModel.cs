@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using CaliburnNinjectExperiment.Model;
+using CaliburnNinjectModule.Models;
 using Ninject;
 
 namespace CaliburnNinjectExperiment.View

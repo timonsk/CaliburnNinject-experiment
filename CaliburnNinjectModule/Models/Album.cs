@@ -1,20 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
+using Ninject;
 
-namespace CaliburnNinjectExperiment.Model
+namespace CaliburnNinjectModule.Models
 {
     public class Album
     {
         public Album()
         {
-            Id = 32;
+            Id = Guid.NewGuid();
             Name = "My album";
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
-        public List<Photo> Photos { get; set; }
+        public ObservableCollection<Photo> Photos { get; set; }
 
+        [Inject]
+        public Photo Photo { get; set; }
         public Photo GetPhoto(int id)
         {
             var photo = Photos.FirstOrDefault(p => p.Id.Equals(id));

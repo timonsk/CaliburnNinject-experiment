@@ -1,4 +1,4 @@
-﻿namespace CaliburnNinjectExperiment.Model
+﻿namespace CaliburnNinjectModule.Models
 {
     public class Photo
     {

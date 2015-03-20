@@ -1,22 +1,31 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
+using Ninject;
 
-namespace CaliburnNinjectExperiment.Model
+namespace CaliburnNinjectModule.Models
 {
     public class User
     {
-        public User(Album album)
+        public User()
         {
             Id = 12;
             Name = "Jack";
             Surname = "Holand";
-            Albums = new List<Album>();
+            Albums = new ObservableCollection<Album>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public List<Album> Albums { get; set; }
+        public ObservableCollection<Album> Albums { get; set; }
+
+        [Inject]
+        public Album Album { private get; set; }
+
+        public Album GetDefaultAlbum()
+        {
+            return Album;
+        }
 
         public Album GetAlbum(int id)
         {

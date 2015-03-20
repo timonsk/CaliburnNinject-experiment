@@ -64,9 +64,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.cs" />
-    <Compile Include="Model\Album.cs" />
-    <Compile Include="Model\Photo.cs" />
-    <Compile Include="Model\User.cs" />
     <Compile Include="View\ShellViewModel.cs" />
     <Page Include="View\ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -109,7 +106,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CaliburnNinjectModule\CaliburnNinjectModule.csproj">
+      <Project>{4b6d5049-2824-4a4a-bf06-16571ca85e71}</Project>
+      <Name>CaliburnNinjectModule</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
