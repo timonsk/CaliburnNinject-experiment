@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+
+using CaliburnNinject.Infrastructure.Interfaces;
 using Ninject;
 
 namespace CaliburnNinjectModule.Models
 {
-    public class Album
+    public class Album : IAlbum
     {
         public Album()
         {
@@ -15,14 +17,17 @@ namespace CaliburnNinjectModule.Models
 
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public ObservableCollection<Photo> Photos { get; set; }
+        public ObservableCollection<IPhoto> Photos { get; set; }
 
         [Inject]
-        public Photo Photo { get; set; }
-        public Photo GetPhoto(int id)
+        public IPhoto Photo { get; set; }
+
+        public IPhoto GetPhoto(int id)
         {
             var photo = Photos.FirstOrDefault(p => p.Id.Equals(id));
             return photo;
         }
     }
+
+
 }

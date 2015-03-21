@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Windows;
 using Caliburn.Micro;
 using CaliburnNinjectExperiment.View;
-using CaliburnNinjectModule;
-using CaliburnNinjectModule.Models;
 using Ninject;
 
 namespace CaliburnNinjectExperiment
 {
     public class AppBootstrapper : BootstrapperBase
     {
-        private readonly IKernel _kernel = new StandardKernel(new ModuleManager());
+        private readonly IKernel _kernel = new StandardKernel();
 
         public AppBootstrapper()
         {
@@ -26,8 +24,9 @@ namespace CaliburnNinjectExperiment
         protected override void Configure()
         {
             _kernel.Bind<IWindowManager>().To<WindowManager>();
-            var photo = _kernel.Get<Photo>();
+            _kernel.Load("CaliburnNinjectModule*.dll");
             _kernel.Bind<ShellViewModel>().ToSelf().InSingletonScope();
+
         }
 
         protected override IEnumerable<object> GetAllInstances(Type service)
