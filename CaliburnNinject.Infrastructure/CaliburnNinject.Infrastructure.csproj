@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4B6D5049-2824-4A4A-BF06-16571CA85E71}</ProjectGuid>
+    <ProjectGuid>{738EA9D4-5D1F-4803-9C6E-3BCE6591E26D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CaliburnNinjectModule</RootNamespace>
-    <AssemblyName>CaliburnNinjectModule</AssemblyName>
+    <RootNamespace>CaliburnNinject.Infrastructure</RootNamespace>
+    <AssemblyName>CaliburnNinject.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -37,20 +37,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Album.cs" />
-    <Compile Include="ModuleManager.cs" />
-    <Compile Include="Models\Photo.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Interfaces\IAlbum.cs" />
+    <Compile Include="Interfaces\IPhoto.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CaliburnNinject.Infrastructure\CaliburnNinject.Infrastructure.csproj">
-      <Project>{738ea9d4-5d1f-4803-9c6e-3bce6591e26d}</Project>
-      <Name>CaliburnNinject.Infrastructure</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
