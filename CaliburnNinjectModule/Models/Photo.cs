@@ -1,8 +1,6 @@
-﻿using CaliburnNinject.Infrastructure.Interfaces;
-
-namespace CaliburnNinjectModule.Models
+﻿namespace CaliburnNinjectModule.Models
 {
-    public class Photo : IPhoto
+    public class Photo
     {
         public int Id { get; set; }
         public string Name { get; set; }

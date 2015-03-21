@@ -1,5 +1,4 @@
-﻿using CaliburnNinject.Infrastructure.Interfaces;
-using CaliburnNinjectModule.Models;
+﻿using CaliburnNinjectModule.Models;
 using Ninject.Modules;
 
 namespace CaliburnNinjectModule
@@ -8,9 +7,9 @@ namespace CaliburnNinjectModule
     {
         public override void Load()
         {
-            Bind<IUser>().To<User>();
-            Bind<IAlbum>().To<Album>();
-            Bind<IPhoto>().To<Photo>();
+            Bind<User>().ToSelf();
+            Bind<Album>().ToSelf();
+            Bind<Photo>().ToSelf();
         }
     }
 }

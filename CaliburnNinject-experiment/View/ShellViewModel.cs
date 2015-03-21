@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using CaliburnNinject.Infrastructure.Interfaces;
+using CaliburnNinjectModule.Models;
 using Ninject;
 
 namespace CaliburnNinjectExperiment.View
@@ -7,12 +7,12 @@ namespace CaliburnNinjectExperiment.View
     public class ShellViewModel : DependencyObject
     {
         public static readonly DependencyProperty UserProperty =
-            DependencyProperty.Register("User", typeof(IUser), typeof(ShellViewModel));
+            DependencyProperty.Register("User", typeof (User), typeof (ShellViewModel));
 
         [Inject]
-        public IUser User
+        public User User
         {
-            get { return (IUser)GetValue(UserProperty); }
+            get { return (User) GetValue(UserProperty); }
             set { SetValue(UserProperty, value); }
         }
     }
